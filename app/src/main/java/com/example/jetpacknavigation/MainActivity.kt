@@ -10,10 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.jetpacknavigation.ui.composeui.CentralPage
-import com.example.jetpacknavigation.ui.composeui.EastPage
-import com.example.jetpacknavigation.ui.composeui.NorthPage
-import com.example.jetpacknavigation.ui.composeui.WestPage
+import com.example.jetpacknavigation.ui.composeui.*
 import com.example.jetpacknavigation.ui.theme.JetpackNavigationTheme
 
 class MainActivity : ComponentActivity() {
@@ -44,16 +41,16 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable("north") {
-                            NorthPage()
+                            NorthPage(onToCentralClick = { navController.navigate("central") })
                         }
                         composable("east") {
-                            EastPage()
+                            EastPage(onToCentralClick = { navController.navigate("central") })
                         }
-                        composable("north") {
-                            NorthPage()
+                        composable("south") {
+                            SouthPage(onToCentralClick = { navController.navigate("central") })
                         }
                         composable("west") {
-                            WestPage()
+                            WestPage(onToCentralClick = { navController.navigate("central") })
                         }
                     }
                 }
