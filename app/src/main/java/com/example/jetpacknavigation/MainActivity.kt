@@ -11,6 +11,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpacknavigation.ui.composeui.CentralPage
+import com.example.jetpacknavigation.ui.composeui.EastPage
+import com.example.jetpacknavigation.ui.composeui.NorthPage
+import com.example.jetpacknavigation.ui.composeui.WestPage
 import com.example.jetpacknavigation.ui.theme.JetpackNavigationTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,10 +38,18 @@ class MainActivity : ComponentActivity() {
                         composable("central") {
                             CentralPage()
                         }
-                        composable("north") {}
-                        composable("east") {}
-                        composable("north") {}
-                        composable("west") {}
+                        composable("north") {
+                            NorthPage()
+                        }
+                        composable("east") {
+                            EastPage()
+                        }
+                        composable("north") {
+                            NorthPage()
+                        }
+                        composable("west") {
+                            WestPage()
+                        }
                     }
                 }
             }
