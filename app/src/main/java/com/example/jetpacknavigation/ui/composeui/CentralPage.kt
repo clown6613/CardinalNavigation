@@ -12,7 +12,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun CentralPage() {
+fun CentralPage(
+    onToNorthClick: () -> Unit,
+    onToEastClick: () -> Unit,
+    onToSouthClick: () -> Unit,
+    onToWestClick: () -> Unit
+) {
 
     Column(
         modifier = Modifier
@@ -27,19 +32,19 @@ fun CentralPage() {
             fontSize = 50.sp
         )
         Spacer(modifier = Modifier.weight(1f))
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = { onToNorthClick() }) {
             Text(text = "北へ")
         }
         Row {
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { onToWestClick() }) {
                 Text(text = "西へ")
             }
             Spacer(modifier = Modifier.weight(1f))
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { onToEastClick() }) {
                 Text(text = "東へ")
             }
         }
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = { onToSouthClick() }) {
             Text(text = "南へ")
         }
 
@@ -51,5 +56,10 @@ fun CentralPage() {
 @Preview
 @Composable
 private fun CentralPageView() {
-    CentralPage()
+    CentralPage(
+        onToNorthClick = {},
+        onToEastClick = {},
+        onToSouthClick = {},
+        onToWestClick = {}
+    )
 }

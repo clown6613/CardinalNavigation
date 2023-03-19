@@ -36,7 +36,12 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(navController = navController, startDestination = "central") {
                         composable("central") {
-                            CentralPage()
+                            CentralPage(
+                                onToNorthClick = { navController.navigate("north") },
+                                onToEastClick = { navController.navigate("east") },
+                                onToWestClick = { navController.navigate("west") },
+                                onToSouthClick = { navController.navigate("south") },
+                            )
                         }
                         composable("north") {
                             NorthPage()
